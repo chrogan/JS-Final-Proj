@@ -35,7 +35,7 @@
           type="text"
           name=""
           id="userInput"
-          placeholder="Search for...."
+          placeholder="Enter a zip code...."
         />
         <button id="myBtn" class="btn btn-primary">Search</button>
       </form>
@@ -44,17 +44,18 @@
 
     <div id="nav_bar_container">
       <div class="mynav w3-bar w3-black">
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("trending")>trending</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("happy")>happy</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("surprised")>surprised</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("sad")>sad</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("trending")>trending_willbe_local_time</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("happy")>happy_weather</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("surprised")>surprised_locations</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("sad")>sad_music</a>
   
      
       </div>
     </div>
 
-    <div id="navbarOutput">
-      
+    <div id="api_output_container">
+      api_output_container: append child in this container.
+      The pic_container below is kept temporarily as an example only.
     </div>
     <!-- NOTE why my flex suck? why when i shrink height the pics go out of container? -->
     <div id="pic_container">
