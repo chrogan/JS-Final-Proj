@@ -41,48 +41,29 @@
       </form>
     </div>
 
-
     <div id="nav_bar_container">
       <div class="mynav w3-bar w3-black">
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("trending")>trending</a>
+        <!-- <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("trending")>trending</a>
         <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("happy")>happy</a>
         <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("surprised")>surprised</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("sad")>sad</a>
-  
-     
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("sad")>sad</a> -->
       </div>
     </div>
 
-    <div id="navbarOutput">
-      
-    </div>
+    <div id="navbarOutput"></div>
     <!-- NOTE why my flex suck? why when i shrink height the pics go out of container? -->
     <div id="pic_container">
       <p id="p1" class="pic_box">
-        <img
-          id="imagep1"
-          class="image"
-          src=""
-          alt="p1 Nothing as of yet"
-        />
+        <img id="imagep1" class="image" src="" alt="p1 Nothing as of yet" />
       </p>
       <p id="p2" class="pic_box">
-        <img
-          id="imagep2"
-          class="image"
-          src=""
-          alt="p1 Nothing as of yet"
-        />
+        <img id="imagep2" class="image" src="" alt="p1 Nothing as of yet" />
       </p>
 
-      
       <p id="p3" class="pic_box">
         <img id="imagep3" class="image" src="" alt="p1 Nothing as of yet" />
       </p>
-      
     </div>
-
- 
 
     <!-- JavaScript Bundle with Popper -->
     <script
@@ -90,6 +71,13 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <!-- Scripts for momentjs, moment-timezone, momentimezone-data, and tzLookup -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment-timezone-with-data.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/darkskyapp/tz-lookup-oss@master/tz.js"></script>
+    <!-- TimeClock script -->
+    <script src="./lib/moment/timeclock.js"></script>
     <!-- My own Javascript -->
     <script src="./script.js"></script>
     <!-- if you want to put it in header do this:
