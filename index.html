@@ -19,6 +19,15 @@
       crossorigin="anonymous"
     />
 
+    <!-- Mapbox CSS/JS -->
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+
+<!-- mapquest css/js -->
+<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+
     <!-- W3 stylesheet great for we nav bar-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 
@@ -35,12 +44,12 @@
           type="text"
           name=""
           id="userInput"
-          placeholder="Enter a zip code...."
+          placeholder="Enter a location...."
         />
         <button id="myBtn" class="btn btn-primary">Search</button>
       </form>
+      <div id='map'></div>
     </div>
-
 
     <div id="nav_bar_container">
       <div class="mynav w3-bar w3-black">
@@ -91,9 +100,13 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <!-- GeoLocation JS -->
+    <script src="./Geocoding.js"></script>
     <!-- My own Javascript -->
     <script src="./script.js"></script>
     <!-- if you want to put it in header do this:
     <script defer src="./script.js"></script> -->
   </body>
 </html>
+
+
