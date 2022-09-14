@@ -1,30 +1,27 @@
-const locationMap = function () {
-  L.mapquest.key = "DOEEESf7yldIWHelbTOJkQ3KzaxXWrA7";
+const key = "DOEEESf7yldIWHelbTOJkQ3KzaxXWrA7";
+let map;
 
-  const locationValue = document.getElementById("userInput").value;
-  document.getElementById("user_input_form").reset();
+function locationMap() {
+  L.mapquest.key = key; //access key
+  const locationValue = document.getElementById("inputLocation").value; //input from the user
 
-  L.mapquest.geocoding().geocode(locationValue, createMap);
+  L.mapquest.geocoding().geocode(locationValue, createMap); //create geocode
+  document.getElementById("user_input").reset(); //clear the form for user experience
+}
 
-  function createMap(error, response) {
-    const location = response.results[0].locations[0];
-    const latLng = location.displayLatLng;
-    const map = L.mapquest.map("map", {
+function createMap(error, response) {
+  const location = response.results[0].locations[0]; //grabbing the location object and storing to location
+  const latLng = location.displayLatLng; //grabbing the longitude and latitude and storing to latLng
+
+  if (map) {
+    map.setView(latLng, 14);
+  } else {
+    map = L.mapquest.map("map", {
       center: latLng,
       layers: L.mapquest.tileLayer("map"),
       zoom: 14,
     });
   }
-};
+}
 
-document.getElementById("myBtn").addEventListener("click", locationMap);
-
-const key = "DOEEESf7yldIWHelbTOJkQ3KzaxXWrA7";
-const locationValue = document.getElementById("userInput").value;
-
-//mapquest object to use for longtitude and latitude
-const urlMap = `https://www.mapquestapi.com/geocoding/v1/address?key=${key}&location=${locationValue}`;
-
-fetch(urlMap)
-  .then((resp) => resp.json())
-  .then((data) => console.log(data));
+document.getElementById("btn_seach").addEventListener("click", locationMap);
