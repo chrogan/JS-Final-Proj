@@ -116,16 +116,17 @@ const weather = {
         // const longitude = document.querySelector('.longitude').value = 30.26;
 
         // Burwash Landing
-        const latitude = document.querySelector('.latitude').value = 60.55;
-        const longitude = document.querySelector('.longitude').value = -140.19;
+        // const latitude = document.querySelector('.latitude').value = 60.55;
+        // const longitude = document.querySelector('.longitude').value = -140.19;
 
         // Tokyo
         // const latitude = document.querySelector('.latitude').value = 35.6845587;
         // const longitude = document.querySelector('.longitude').value = 139.7506524;
 
-        weather.getWeather(latitude, longitude);
+        // weather.getWeather(latitude, longitude);
+        weather.getWeather(30.26, 30.26);
         document.getElementById('apiBody').remove();
     }
 }
 
-// document.querySelector('.weatherBtn').addEventListener('click', weather.searchWeather);
+document.querySelector('.weatherBtn').addEventListener('click', weather.searchWeather);
