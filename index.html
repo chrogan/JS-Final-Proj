@@ -20,7 +20,6 @@
     />
 
     <!-- Mapbox CSS/JS -->
-
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
 
@@ -51,17 +50,26 @@
       <div id='map'></div>
     </div>
 
+<!-- latnLon = [33.307575, -111.84494] -->
     <div id="nav_bar_container">
       <div class="mynav w3-bar w3-black">
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("trending")>trending_willbe_local_time</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("happy")>happy_weather</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("surprised")>surprised_locations</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("sad")>sad_music</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("trending")>local_time</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("happy")>weather</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("surprised")>locations</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("sad")>music</a>
+             <!-- <a href="#" class="w3-bar-item w3-button" onclick=setupLandmark(lat, lon)>Tourist Destinations</a> -->
+        <a href="#" class="w3-bar-item w3-button" onclick=getLandmark(latnLon)>Tourist Destinations</a>
+  
      
       </div>
     </div>
+<div id="api_super_container">
+
 
     <div id="api_output_container">
+
+    </div>
+     
     </div>
     <!-- NOTE why my flex suck? why when i shrink height the pics go out of container? -->
     <!-- <div id="pic_container">
@@ -75,7 +83,8 @@
       <p id="p3" class="pic_box">
         <img id="imagep3" class="image" src="" alt="p1 Nothing as of yet" />
       </p>
-    </div> -->
+      
+    </div> 
 
     <!-- JavaScript Bundle with Popper -->
     <script
@@ -96,6 +105,10 @@
     <script src="./script.js"></script>
     <!-- if you want to put it in header do this:
     <script defer src="./script.js"></script> -->
+    <!-- weather js -->
+    <script src="./weather.js"></script>
+    <!-- Tourist js -->
+    <script src="./scriptTourist.js"></script>
   </body>
 </html>
 
