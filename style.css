@@ -107,3 +107,9 @@ body {
   color: whitesmoke;
   text-shadow: 2px 2px 5px black;
 }
+
+#map{
+  height: 300px;
+  width: 300px;
+}
+
