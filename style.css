@@ -17,6 +17,9 @@ body {
   /* border-style: solid; */
 }
 
+/* #myBtn {
+  /* background-color: darkblue; */
+
 #nav_bar_container {
   display: flex;
   height: 80px;
@@ -24,6 +27,14 @@ body {
   justify-content: center;
   align-items: center;
   padding: 30px 10%;
+}
+
+/* html nav bar */
+.mynav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
 }
 
 #pic_container {
@@ -37,22 +48,6 @@ body {
   /* justify-content: space-evenly; */
   gap: 4px;
   justify-content: center;
-  /* NOTE this don't work, center, why? */
-  align-items: center;
-}
-
-#navbarOutput {
-  display: flex;
-  height: auto;
-
-  width: 100vw;
-  border-width: 6px;
-  border-style: solid;
-  border-color: grey;
-  height: 300px;
-  gap: 4px;
-  justify-content: center;
-  /* NOTE this don't work, center, why? */
   align-items: center;
 }
 
@@ -69,12 +64,19 @@ body {
   width: 150px;
 }
 
-/* html nav bar */
-.mynav {
+#api_output_container {
   display: flex;
+  height: auto;
+  height: 300px;
+
+  width: 100vw;
+  border-width: 6px;
+  border-style: solid;
+  border-color: grey;
+
+  gap: 4px;
   justify-content: center;
   align-items: center;
-  width: auto;
 }
 
 .clock {
