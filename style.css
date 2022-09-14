@@ -66,16 +66,21 @@ body {
 }
 
 #api_output_container {
+  display: inline-flex;
+  height: max-content;
+
+  width: fit-content;
+  /* border-width: 6px;
+  border-style: solid; */
+  /* border-color: grey; */
+
+  gap: 30px;
+  /* justify-content: space-between; */
+  align-items: stretch;
+}
+
+#api_super_container {
+  overflow: scroll;
   display: flex;
-  height: auto;
-  height: 300px;
-
-  width: 100vw;
-  border-width: 6px;
-  border-style: solid;
-  border-color: grey;
-
-  gap: 4px;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: space-around; */
 }
