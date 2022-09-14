@@ -17,9 +17,8 @@ body {
   /* border-style: solid; */
 }
 
-#myBtn {
+/* #myBtn {
   /* background-color: darkblue; */
-}
 
 #nav_bar_container {
   display: flex;
@@ -83,4 +82,28 @@ body {
   overflow: scroll;
   display: flex;
   /* justify-content: space-around; */
+}
+
+.clock {
+  border: 4px solid black;
+  border-radius: 30px;
+  height: 80%;
+  width: 40%;
+  background: url(
+  'https://images.unsplash.com/photo-1663011109441-6948af4a0b80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
+  ) no-repeat center center/cover;
+  box-shadow: 5px 7px #888888;
+}
+
+.clockText { 
+  font: LCD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 53px;
+  font-size: 2.5rem;
+  font-weight:800;
+  color: whitesmoke;
+  text-shadow: 2px 2px 5px black;
 }
