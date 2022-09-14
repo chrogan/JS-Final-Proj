@@ -1,3 +1,4 @@
+
 // WARNING!!! Keep this
 document.getElementById("user_input_form").addEventListener("submit", (evt) => {
   evt.preventDefault();
@@ -8,11 +9,12 @@ document.getElementById("user_input_form").addEventListener("submit", (evt) => {
   document.getElementById("user_input_form").reset();
 
   const queryObject = userInput;
-
   getUnsplash(queryObject);
   //   clear user inputs from the form (for UX)
   document.getElementById("user_input_form").reset();
 });
+
+
 
 // NOTE  keep 17 - 27. rename function
 function getUnsplash(queryObject) {
