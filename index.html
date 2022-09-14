@@ -35,30 +35,35 @@
           type="text"
           name=""
           id="userInput"
-          placeholder="Enter a zip code...."
+          placeholder="Enter a city and state...."
         />
         <button id="myBtn" class="btn btn-primary">Search</button>
       </form>
     </div>
 
-
+<!-- latnLon = [33.307575, -111.84494] -->
     <div id="nav_bar_container">
       <div class="mynav w3-bar w3-black">
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("trending")>trending_willbe_local_time</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("happy")>happy_weather</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("surprised")>surprised_locations</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("sad")>sad_music</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("trending")>local_time</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("happy")>weather</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("surprised")>locations</a>
+        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("sad")>music</a>
+             <!-- <a href="#" class="w3-bar-item w3-button" onclick=setupLandmark(lat, lon)>Tourist Destinations</a> -->
+        <a href="#" class="w3-bar-item w3-button" onclick=getLandmark(latnLon)>Tourist Destinations</a>
   
      
       </div>
     </div>
+<div id="api_super_container">
+
 
     <div id="api_output_container">
-      api_output_container: append child in this container.
-      The pic_container below is kept temporarily as an example only.
+
+    </div>
+     
     </div>
     <!-- NOTE why my flex suck? why when i shrink height the pics go out of container? -->
-    <div id="pic_container">
+    <!-- <div id="pic_container">
       <p id="p1" class="pic_box">
         <img
           id="imagep1"
@@ -81,7 +86,7 @@
         <img id="imagep3" class="image" src="" alt="p1 Nothing as of yet" />
       </p>
       
-    </div>
+    </div> -->
 
  
 
@@ -92,7 +97,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- My own Javascript -->
-    <script src="./script.js"></script>
+    <script src="./scriptTourist.js"></script>
     <!-- if you want to put it in header do this:
     <script defer src="./script.js"></script> -->
   </body>
