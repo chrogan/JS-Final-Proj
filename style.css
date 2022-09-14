@@ -37,7 +37,7 @@ body {
   width: auto;
 }
 
-#pic_container {
+/* #pic_container {
   display: flex;
   height: auto;
 
@@ -46,10 +46,10 @@ body {
   border-style: solid;
   border-color: blue;
   /* justify-content: space-evenly; */
-  gap: 4px;
+  /* gap: 4px;
   justify-content: center;
   align-items: center;
-}
+} */ */
 
 .pic_box {
   height: 250px;
@@ -96,12 +96,12 @@ body {
 }
 
 .clockText { 
-  font: LCD;
+  font: ariel;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 53px;
+  padding-top: 150px;
   font-size: 2.5rem;
   font-weight:800;
   color: whitesmoke;

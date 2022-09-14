@@ -128,4 +128,4 @@ const weather = {
     }
 }
 
-document.querySelector('.weatherBtn').addEventListener('click', weather.searchWeather);
+// document.querySelector('.weatherBtn').addEventListener('click', weather.searchWeather);
