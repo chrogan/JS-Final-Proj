@@ -24,5 +24,6 @@ function createMap(error, response) {
       zoom: 14,
     });
   }
+  map.addControl(L.mapquest.satelliteControl());
 }
 document.getElementById("myBtn").addEventListener("click", locationMap);
