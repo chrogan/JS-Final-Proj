@@ -1,16 +1,13 @@
 let index_count = 0;
 let idx;
 
+// const type = "tourist_attraction";
+
 const type = "tourist_attraction";
-// document.querySelector(".touristBtn").addEventListener("click", getLandmark);
 document.querySelector(".touristBtn").addEventListener("click", function () {
   while (document.querySelector("#api_output_container")) {
     document.querySelector("#api_super_container").firstChild.remove();
   }
-
-  // while (document.querySelector("#api_output_container").contains(".card")) {
-  //   document.querySelector(".card").remove();
-  // }
 
   const apiContainer = document.createElement("div");
 
@@ -23,7 +20,7 @@ document.querySelector(".touristBtn").addEventListener("click", function () {
 });
 
 function getLandmark() {
-  const coord = JSON.parse(localStorage.getItem('coordinates'));
+  const coord = JSON.parse(localStorage.getItem("coordinates"));
   const coordArray = [coord.lat, coord.lng];
 
   // access google api
@@ -50,7 +47,10 @@ function getLandmark() {
         // Created Div #1
         const card = document.createElement("div");
         card.classList.add("card");
-        card.setAttribute("style", "width: 18rem;  border: 4px solid black; border-radius: 10px;");
+        card.setAttribute(
+          "style",
+          "width: 18rem;  border: 4px solid black; border-radius: 10px;"
+        );
         document.getElementById("api_output_container").appendChild(card);
 
         // Image URL
