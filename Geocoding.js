@@ -1,4 +1,4 @@
-import { time } from "./lib/moment/timeclock.js";
+// import { time } from "./lib/moment/timeclock.js";
 
 const key = "DOEEESf7yldIWHelbTOJkQ3KzaxXWrA7";
 let map;
@@ -16,7 +16,6 @@ function createMap(error, response) {
   const location = response.results[0].locations[0]; //grabbing the location object and storing to location
   const latLng = location.displayLatLng; //grabbing the longitude and latitude and storing to latLng
   coord = latLng;
-  time(coord);
   if (map) {
     map.setView(latLng, 14);
   } else {
