@@ -1,3 +1,11 @@
+// while (document.querySelector('#api_output_container')){
+//     document.querySelector('#api_super_container').firstChild.remove();
+// }
+
+// while (document.querySelector('#apiBody')){
+//     document.querySelector('#apiBody').remove();
+// }
+
 
 const weather = {
     getWeather: function(lat, lon) {
@@ -31,6 +39,11 @@ const weather = {
 
         const celsius = (temp - 32) * 5 / 9;
         const newDescription = description.replace(/\s+/g, '%20');
+
+        // Create API Container and append to API Super Container
+        const apiContainer = document.createElement('div');
+        apiContainer.setAttribute('id','api_output_container');
+        document.querySelector('#api_super_container').appendChild(apiContainer);
 
         // Grabbing apiContainer
         const apiBox = document.getElementById('api_output_container');
@@ -83,6 +96,14 @@ const weather = {
     },
 
     searchWeather: function() {
+        while (document.querySelector('#api_output_container')){
+            document.querySelector('#api_super_container').firstChild.remove();
+        }
+        
+        while (document.querySelector('#apiBody')){
+            document.querySelector('#apiBody').remove();
+        }
+
         weather.getWeather(coord.lat, coord.lng);
         document.getElementById('apiBody').remove();
     }
