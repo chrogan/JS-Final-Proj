@@ -16,6 +16,13 @@ function createMap(error, response) {
   const location = response.results[0].locations[0]; //grabbing the location object and storing to location
   const latLng = location.displayLatLng; //grabbing the longitude and latitude and storing to latLng
   coord = latLng;
+
+  // localStorage 
+  // const obj = {name:'nelly',gender:'male'};
+  // localStorage.setItem('myPerson',JSON.stringify(obj));
+  // JSON.parse('NAMEOFKEY');
+  
+
   if (map) {
     map.setView(latLng, 14);
   } else {
