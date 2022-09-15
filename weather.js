@@ -14,7 +14,16 @@ const weather = {
             
     },
 
+
+
     showWeather: function(data) {
+        while (document.querySelector('#api_output_container')){
+            document.querySelector('#api_super_container').firstChild.remove();
+        }
+        const apiContainer = document.createElement('div');
+        apiContainer.setAttribute('id','api_output_container');
+        document.querySelector('#api_super_container').appendChild(apiContainer);
+
         const { name } = data;
         const { temp } = data.main;
         const { description } = data.weather[0];
