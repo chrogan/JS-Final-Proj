@@ -3,13 +3,18 @@ body {
 }
 
 #text_box_container {
+  background-image: url("https://bit.ly/3QFnhEF");
   display: flex;
   width: 100vw;
-  justify-content: center;
-  height: 200px;
-  border: 9px solid green;
+  height: auto;
   margin: auto;
+  justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
+
+}
+#myBtn, #userInput{
+  opacity: .3;
 }
 
 #text_box_para {
@@ -109,7 +114,9 @@ body {
 }
 
 #map{
-  height: 300px;
-  width: 300px;
+  height: 19rem;
+  width: 100vh;
 }
-
+#user_input_form{
+  margin-top: 50px;
+}
