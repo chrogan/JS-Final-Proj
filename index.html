@@ -53,10 +53,10 @@
 <!-- latnLon = [33.307575, -111.84494] -->
     <div id="nav_bar_container">
       <div class="mynav w3-bar w3-black">
-        <a href="#" class="w3-bar-item w3-button localTime" onclick=getUnsplash("trending")>local_time</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("happy")>weather</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("surprised")>locations</a>
-        <a href="#" class="w3-bar-item w3-button" onclick=getUnsplash("sad")>music</a>
+        <a href="#" class="w3-bar-item w3-button localTime">local_time</a>
+        <a href="#" class="w3-bar-item w3-button weatherBtn">weather</a>
+        <a href="#" class="w3-bar-item w3-button">locations</a>
+        <a href="#" class="w3-bar-item w3-button">music</a>
              <!-- <a href="#" class="w3-bar-item w3-button" onclick=setupLandmark(lat, lon)>Tourist Destinations</a> -->
         <a href="#" class="w3-bar-item w3-button" onclick=getLandmark(latnLon)>Tourist Destinations</a>
   
@@ -93,7 +93,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- GeoLocation JS -->
-    <script type="module" src="./Geocoding.js"></script>
+    <script src="./Geocoding.js"></script>
     <!-- Scripts for momentjs, moment-timezone, momentimezone-data, and tzLookup -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone.min.js"></script>
@@ -106,9 +106,9 @@
     <!-- if you want to put it in header do this:-->
     <!-- <script defer src="./script.js"></script> -->
     <!-- weather js -->
-    <script src="./weather.js"></script>
+    <script type="module" src="./weather.js"></script>
     <!-- Tourist js -->
-    <script src="./scriptTourist.js"></script>
+    <script type="module" src="./scriptTourist.js"></script>
   </body>
 </html>
 

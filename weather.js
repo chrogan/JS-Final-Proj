@@ -1,3 +1,4 @@
+
 const weather = {
     getWeather: function(lat, lon) {
         const apiKey = '2f1f6d6cf1d67f2a490669b0c4e4fa0c';
@@ -116,16 +117,18 @@ const weather = {
         // const longitude = document.querySelector('.longitude').value = 30.26;
 
         // Burwash Landing
-        const latitude = document.querySelector('.latitude').value = 60.55;
-        const longitude = document.querySelector('.longitude').value = -140.19;
+        // const latitude = document.querySelector('.latitude').value = 60.55;
+        // const longitude = document.querySelector('.longitude').value = -140.19;
 
         // Tokyo
         // const latitude = document.querySelector('.latitude').value = 35.6845587;
         // const longitude = document.querySelector('.longitude').value = 139.7506524;
 
-        weather.getWeather(latitude, longitude);
+        // weather.getWeather(latitude, longitude);
+        // weather.getWeather(47.60, -122.33);
+        weather.getWeather(coord.lat, coord.lng);
         document.getElementById('apiBody').remove();
     }
 }
 
-// document.querySelector('.weatherBtn').addEventListener('click', weather.searchWeather);
+document.querySelector('.weatherBtn').addEventListener('click', weather.searchWeather);
