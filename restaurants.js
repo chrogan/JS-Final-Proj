@@ -1,16 +1,12 @@
-let index_count = 0;
-let idx;
+let index_cnt = 0;
+let i;
 
-const type = "tourist_attraction";
+const types = "restaurant";
 // document.querySelector(".touristBtn").addEventListener("click", getLandmark);
-document.querySelector(".touristBtn").addEventListener("click", function () {
+document.querySelector(".restaurantBtn").addEventListener("click", function () {
   while (document.querySelector("#api_output_container")) {
     document.querySelector("#api_super_container").firstChild.remove();
   }
-
-  // while (document.querySelector("#api_output_container").contains(".card")) {
-  //   document.querySelector(".card").remove();
-  // }
 
   const apiContainer = document.createElement("div");
 
@@ -27,7 +23,7 @@ function getLandmark() {
   const coordArray = [coord.lat, coord.lng];
 
   // access google api
-  const googleApi = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${coordArray}&radius=8000&type=${type}&&key=AIzaSyBlM-WBRE6npH8Tb2rem-rTL8m1Ti0gT7c`;
+  const googleApi = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${coordArray}&radius=8000&type=${types}&&key=AIzaSyBlM-WBRE6npH8Tb2rem-rTL8m1Ti0gT7c`;
 
   fetch(googleApi)
     .then(function (response) {
@@ -36,15 +32,15 @@ function getLandmark() {
     .then(function (data) {
       const results = data.results;
 
-      for (let i = 0; i < data.results.length; i++, index_count++) {
-        idx = `"${index_count}"`;
+      for (let i = 0; i < data.results.length; i++, index_cnt++) {
+        i = `"${index_cnt}"`;
 
-        const nomen = results[index_count].name;
-        const rating = results[index_count].rating;
+        const nomen = results[index_cnt].name;
+        const rating = results[index_cnt].rating;
         // types are weird. they are multiple. will require sorting and removing "establishment"
-        const address = results[index_count].vicinity;
-        // const isOpen = results[index_count].opening_hours.open_now;
-        const photo_ref = results[index_count].photos["0"].photo_reference;
+        const address = results[index_cnt].vicinity;
+        // const isOpen = results[index_cnt].opening_hours.open_now;
+        const photo_ref = results[index_cnt].photos["0"].photo_reference;
         const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_ref}&key=AIzaSyBlM-WBRE6npH8Tb2rem-rTL8m1Ti0gT7c`;
 
         // Created Div #1
@@ -88,5 +84,5 @@ function getLandmark() {
         cardBody.appendChild(newAddress);
       }
     });
-  index_count = 0;
+  index_cnt = 0;
 }

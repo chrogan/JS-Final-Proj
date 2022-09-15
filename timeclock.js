@@ -10,11 +10,14 @@ document.querySelector('.timeBtn').addEventListener('click', function() {
     }
 
 //tz lookup to take in coordinates and output IANA standard time zones
+const coord = JSON.parse(localStorage.getItem('coordinates'));
+
 const input = tzlookup(coord.lat, coord.lng);
 console.log(input);
 
 const apiContainer = document.createElement('div');
 apiContainer.setAttribute('id','api_output_container');
+apiContainer.setAttribute("style", "justify-content:center");
 document.querySelector('#api_super_container').appendChild(apiContainer);
 
 //create element to hold clock

@@ -13,13 +13,22 @@ function locationMap() {
 function createMap(error, response) {
   const location = response.results[0].locations[0]; //grabbing the location object and storing to location
   const latLng = location.displayLatLng; //grabbing the longitude and latitude and storing to latLng
-  coord = latLng;
+  const coord = latLng;
+  localStorage.setItem('coordinates', JSON.stringify(coord));
+
+  // localStorage 
+  //  const coord = {name:'NELLY',gender:'male'};
+  // localStorage.setItem('myPerson',JSON.stringify(obj));
+  // JSON.parse('NAMEOFKEY');
+
+  
+
   if (map) {
     map.flyTo(latLng, 14);
   } else {
     map = L.mapquest.map("map", {
       //map initialized
-      center: latLng,
+      center: coord,
       layers: L.mapquest.tileLayer("map"),
       zoom: 14,
     });

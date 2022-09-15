@@ -36,6 +36,7 @@ const weather = {
         // Create API Container and append to API Super Container
         const apiContainer = document.createElement('div');
         apiContainer.setAttribute('id','api_output_container');
+        apiContainer.setAttribute("style", "justify-content:center");
         document.querySelector('#api_super_container').appendChild(apiContainer);
 
         // Grabbing apiContainer
@@ -76,6 +77,8 @@ const weather = {
         imageContainer.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
         descriptionImageBox.appendChild(imageContainer);
 
+        // apiBody.setAttribute('style',`background: url(${imageContainer.src})`);
+
         // Create Description p
         const descriptionContainer = document.createElement('p');
         descriptionContainer.setAttribute('id', 'description');
@@ -83,7 +86,7 @@ const weather = {
         descriptionImageBox.appendChild(descriptionContainer);
 
 
-        document.getElementById('api_output_container').style.backgroundImage =  `url(https://source.unsplash.com/1600x900/?${newDescription})`;
+        document.getElementById('apiBody').style.backgroundImage =  `url(https://source.unsplash.com/1600x900/?${newDescription})`;
 
 
     },
@@ -96,9 +99,9 @@ const weather = {
         while (document.querySelector('#apiBody')){
             document.querySelector('#apiBody').remove();
         }
-
+        const coord = JSON.parse(localStorage.getItem('coordinates'));
         weather.getWeather(coord.lat, coord.lng);
-        document.getElementById('apiBody').remove();
+     
     }
 }
 
