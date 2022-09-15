@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="./style.css" />
 
     <!-- Search location -->
-    <link rel="icon" type="image/x-icon" href="./image/ninja2.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/7.ico" />
   </head>
   <body>
     <div id="text_box_container">
@@ -50,15 +50,18 @@
       <div id="map"></div>
     </div>
 
-    <!-- latnLon = [33.307575, -111.84494] -->
     <!-- Navigation bar for time, weather, and landmarks -->
     <div id="nav_bar_container">
       <div class="mynav w3-bar w3-black">
         <a href="#" class="w3-bar-item w3-button timeBtn">Local Time</a>
         <a href="#" class="w3-bar-item w3-button weatherBtn">Weather</a>
-        <a href="#" class="w3-bar-item w3-button" onclick="getLandmark(latnLon)"
+        <a href="#" class="w3-bar-item w3-button touristBtn"
           >Tourist Destinations</a
         >
+        <a href="#" class="w3-bar-item w3-button restaurantBtn">Restaurant</a>
+        <!-- <a href="#" class="w3-bar-item w3-button" onclick="getLandmark(latnLon)"
+          >Tourist Destinations</a
+        > -->
       </div>
     </div>
     <!-- container for navbar outputs -->
@@ -82,8 +85,10 @@
     <!-- TimeClock script -->
     <script src="./timeclock.js"></script>
     <!-- Weather js -->
-    <script type="module" src="./weather.js"></script>
+    <script src="./weather.js"></script>
     <!-- Tourist js -->
-    <script type="module" src="./scriptTourist.js"></script>
+    <script src="./tourist.js"></script>
+    <!-- Restaurant js -->
+    <script src="./restaurants.js"></script>
   </body>
 </html>
