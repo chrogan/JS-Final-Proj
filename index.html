@@ -19,13 +19,13 @@
       crossorigin="anonymous"
     />
 
-    <!-- Mapbox CSS/JS -->
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
-
-<!-- mapquest css/js -->
-<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
-<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <!-- mapquest css/js -->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"
+    />
 
     <!-- W3 stylesheet great for we nav bar-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -33,7 +33,7 @@
     <!-- My Styles-->
     <link rel="stylesheet" href="./style.css" />
 
-    <!-- favicon -->
+    <!-- Search location -->
     <link rel="icon" type="image/x-icon" href="./image/ninja2.ico" />
   </head>
   <body>
@@ -47,46 +47,26 @@
         />
         <button id="myBtn" class="btn btn-primary">Search</button>
       </form>
-      <div id='map'></div>
+      <div id="map"></div>
     </div>
 
-<!-- latnLon = [33.307575, -111.84494] -->
+    <!-- latnLon = [33.307575, -111.84494] -->
+    <!-- Navigation bar for time, weather, and landmarks -->
     <div id="nav_bar_container">
       <div class="mynav w3-bar w3-black">
-        <a href="#" class="w3-bar-item w3-button localTime">local_time</a>
+        <a href="#" class="w3-bar-item w3-button timeBtn">local_time</a>
         <a href="#" class="w3-bar-item w3-button weatherBtn">weather</a>
-        <a href="#" class="w3-bar-item w3-button">locations</a>
-        <a href="#" class="w3-bar-item w3-button">music</a>
-             <!-- <a href="#" class="w3-bar-item w3-button" onclick=setupLandmark(lat, lon)>Tourist Destinations</a> -->
-        <a href="#" class="w3-bar-item w3-button" onclick=getLandmark(latnLon)>Tourist Destinations</a>
-  
-     
+        <a href="#" class="w3-bar-item w3-button" onclick="getLandmark(latnLon)"
+          >Tourist Destinations</a
+        >
       </div>
     </div>
-<div id="api_super_container">
-
-
-    <div id="api_output_container">
-
+    <!-- container for navbar outputs -->
+    <div id="api_super_container">
+      <div id="api_output_container"></div>
     </div>
-     
-    <!-- </div> -->
-    <!-- NOTE why my flex suck? why when i shrink height the pics go out of container? -->
-    <!-- <div id="pic_container">
-      <p id="p1" class="pic_box">
-        <img id="imagep1" class="image" src="" alt="p1 Nothing as of yet" />
-      </p>
-      <p id="p2" class="pic_box">
-        <img id="imagep2" class="image" src="" alt="p1 Nothing as of yet" />
-      </p>
 
-      <p id="p3" class="pic_box">
-        <img id="imagep3" class="image" src="" alt="p1 Nothing as of yet" />
-      </p>
-      
-    </div> 
-
-    <!-- JavaScript Bundle with Popper -->
+    <!-- Bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
@@ -100,16 +80,10 @@
     <script src="https://momentjs.com/downloads/moment-timezone-with-data.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/darkskyapp/tz-lookup-oss@master/tz.js"></script>
     <!-- TimeClock script -->
-    <script type="module" src="./lib/moment/timeclock.js"></script>
-    <!-- My own Javascript -->
-    <script  type='module'src="./script.js"></script>
-    <!-- if you want to put it in header do this:-->
-    <!-- <script defer src="./script.js"></script> -->
-    <!-- weather js -->
+    <script src="./timeclock.js"></script>
+    <!-- Weather js -->
     <script type="module" src="./weather.js"></script>
     <!-- Tourist js -->
     <script type="module" src="./scriptTourist.js"></script>
   </body>
 </html>
-
-

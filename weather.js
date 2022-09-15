@@ -19,25 +19,9 @@ const weather = {
         const { temp } = data.main;
         const { description } = data.weather[0];
         const { icon } = data.weather[0];
-        // const { dt } = data;
-        // const { timezone } = data;
 
         const celsius = (temp - 32) * 5 / 9;
         const newDescription = description.replace(/\s+/g, '%20');
-        // const date = new Date((dt + timezone) * 1000);
-        // const time = `${date.getUTCHours()}:${date.getUTCMinutes()}`
-
-
-        // This section is working @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-        // document.getElementById('time').innerText = time; // h4
-        // document.getElementById('right_box_heading').innerText = name; // h4
-        // document.getElementById('temp').innerText = `${temp.toFixed(0)}°`; // h5
-        // document.getElementById('cards_container').innerText = description; // div
-        // document.getElementById('weather_icon').src = `https://openweathermap.org/img/wn/${icon}@2x.png`; // img
-        // document.getElementById('right_box').style.backgroundImage = `url(https://source.unsplash.com/250x100/?${name})`;
-
-        // This section is working @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
         // Grabbing apiContainer
         const apiBox = document.getElementById('api_output_container');
@@ -46,12 +30,6 @@ const weather = {
         const apiBody = document.createElement('div');
         apiBody.setAttribute('id', 'apiBody');
         apiBox.appendChild(apiBody);
-
-        // Create Time h4
-        // const timeContainer = document.createElement('h4');
-        // timeContainer.setAttribute('id', 'time');
-        // timeContainer.innerText = time;
-        // apiBody.appendChild(timeContainer);
 
         // Create City h4
         const cityContainer = document.createElement('h4');
@@ -90,42 +68,12 @@ const weather = {
         descriptionImageBox.appendChild(descriptionContainer);
 
 
-        document.getElementById('api_output_container').style.backgroundImage =  `url(https://source.unsplash.com/1600x900/?${newDescription})`; //`url(https://source.unsplash.com/250x100/?${name})`; // `url(https://source.unsplash.com/1600x900/?${description})`;
-
+        document.getElementById('api_output_container').style.backgroundImage =  `url(https://source.unsplash.com/1600x900/?${newDescription})`;
 
 
     },
 
     searchWeather: function() {
-        // const latitude = document.querySelector('.latitude').value;
-        // const longitude = document.querySelector('.longitude').value;
-
-        // Seattle
-        // const latitude = document.querySelector('.latitude').value = 47.60;
-        // const longitude = document.querySelector('.longitude').value = -122.33;
-
-        // London, Canada
-        // const latitude = document.querySelector('.latitude').value = 42.98;
-        // const longitude = document.querySelector('.longitude').value = -81.23;
-
-        // Austin, TX
-        // const latitude = document.querySelector('.latitude').value = 30.27;
-        // const longitude = document.querySelector('.longitude').value = -97.75;
-
-        // Madīnat as Sādāt
-        // const latitude = document.querySelector('.latitude').value = 30.26;
-        // const longitude = document.querySelector('.longitude').value = 30.26;
-
-        // Burwash Landing
-        // const latitude = document.querySelector('.latitude').value = 60.55;
-        // const longitude = document.querySelector('.longitude').value = -140.19;
-
-        // Tokyo
-        // const latitude = document.querySelector('.latitude').value = 35.6845587;
-        // const longitude = document.querySelector('.longitude').value = 139.7506524;
-
-        // weather.getWeather(latitude, longitude);
-        // weather.getWeather(47.60, -122.33);
         weather.getWeather(coord.lat, coord.lng);
         document.getElementById('apiBody').remove();
     }
