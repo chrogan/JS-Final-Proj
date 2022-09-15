@@ -1,5 +1,3 @@
-
-
 const key = "DOEEESf7yldIWHelbTOJkQ3KzaxXWrA7";
 let map;
 let coord;
@@ -17,20 +15,13 @@ function createMap(error, response) {
   const latLng = location.displayLatLng; //grabbing the longitude and latitude and storing to latLng
   coord = latLng;
   if (map) {
-    map.setView(latLng, 14);
+    map.flyTo(latLng, 14);
   } else {
     map = L.mapquest.map("map", {
       //map initialized
       center: latLng,
       layers: L.mapquest.tileLayer("map"),
       zoom: 14,
-      icon: L.mapquest.icons.marker({
-        primaryColor: "#22407F",
-        secondaryColor: "#3B5998",
-        shadow: true,
-        size: "md",
-        symbol: "A",
-      }),
     });
   }
 }
