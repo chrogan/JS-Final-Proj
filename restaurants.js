@@ -1,8 +1,7 @@
 let index_cnt = 0;
-let i;
+let myIndex;
 
 const types = "restaurant";
-// document.querySelector(".touristBtn").addEventListener("click", getLandmark);
 document.querySelector(".restaurantBtn").addEventListener("click", function () {
   while (document.querySelector("#api_output_container")) {
     document.querySelector("#api_super_container").firstChild.remove();
@@ -15,15 +14,15 @@ document.querySelector(".restaurantBtn").addEventListener("click", function () {
 
   document.querySelector("#api_super_container").appendChild(apiContainer);
 
-  getLandmark();
+  getRestaurant();
 });
 
-function getLandmark() {
-  const coord = JSON.parse(localStorage.getItem('coordinates'));
+function getRestaurant() {
+  const coord = JSON.parse(localStorage.getItem("coordinates"));
   const coordArray = [coord.lat, coord.lng];
 
   // access google api
-  const googleApi = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${coordArray}&radius=8000&type=${types}&&key=AIzaSyBlM-WBRE6npH8Tb2rem-rTL8m1Ti0gT7c`;
+  const googleApi = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${coordArray}&radius=80000&type=${types}&&key=AIzaSyBlM-WBRE6npH8Tb2rem-rTL8m1Ti0gT7c`;
 
   fetch(googleApi)
     .then(function (response) {
@@ -33,7 +32,7 @@ function getLandmark() {
       const results = data.results;
 
       for (let i = 0; i < data.results.length; i++, index_cnt++) {
-        i = `"${index_cnt}"`;
+        myIndex = `"${index_cnt}"`;
 
         const nomen = results[index_cnt].name;
         const rating = results[index_cnt].rating;
@@ -46,7 +45,10 @@ function getLandmark() {
         // Created Div #1
         const card = document.createElement("div");
         card.classList.add("card");
-        card.setAttribute("style", "width: 18rem;  border: 4px solid black; border-radius: 10px;");
+        card.setAttribute(
+          "style",
+          "width: 18rem;  border: 4px solid black; border-radius: 10px;"
+        );
         document.getElementById("api_output_container").appendChild(card);
 
         // Image URL
