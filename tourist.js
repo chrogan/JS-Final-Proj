@@ -1,34 +1,44 @@
-document.getElementById("user_input_form").addEventListener("submit", (evt) => {
-  evt.preventDefault();
-
-  const userInput = document.getElementById("userInput").value;
-
-  //   clear user inputs from the form (for UX)
-  document.getElementById("user_input_form").reset();
-
-  const queryObject = userInput;
-
-  //   clear user inputs from the form (for UX)
-  document.getElementById("user_input_form").reset();
-});
 let index_count = 0;
-let index_new;
-// const queryObject = 85226;
-const lat = 33.307575;
-const lon = -111.84494;
-const latnLon = [33.307575, -111.84494];
-const type = "tourist_attraction";
+let idx;
 
-// function setupLandmark(lat, lon) {
-//   if index_new >= 10 {
-//     index_new = 0;
-//   } else {
-//     index_new++2;
+// const coordArray = [33.307575, -111.84494];
+// const type = "tourist_attraction";
+// const type = "park";
+
+const type = "restaurant";
+
+// document.querySelector('.timeBtn').addEventListener('click', function() {
+
+//   while (document.querySelector('#api_output_container')){
+//       document.querySelector('#api_super_container').firstChild.remove();
 //   }
-//   getLandmark(lat, lon)
-// }
 
-function getLandmark(coordArray) {
+//   while (document.querySelector('.clock')){
+//       document.querySelector('.clock').remove();
+//   }
+
+// document.querySelector(".touristBtn").addEventListener("click", getLandmark);
+document.querySelector(".touristBtn").addEventListener("click", function () {
+  while (document.querySelector("#api_output_container")) {
+    document.querySelector("#api_super_container").firstChild.remove();
+  }
+
+  // while (document.querySelector("#api_output_container").contains(".card")) {
+  //   document.querySelector(".card").remove();
+  // }
+
+  const apiContainer = document.createElement("div");
+
+  apiContainer.setAttribute("id", "api_output_container");
+
+  document.querySelector("#api_super_container").appendChild(apiContainer);
+
+  getLandmark();
+});
+
+function getLandmark() {
+  const coordArray = [coord.lat, coord.lng];
+
   // access google api
   const googleApi = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${coordArray}&radius=8000&type=${type}&&key=AIzaSyBlM-WBRE6npH8Tb2rem-rTL8m1Ti0gT7c`;
 
@@ -41,18 +51,12 @@ function getLandmark(coordArray) {
 
       for (let i = 0; i < data.results.length; i++, index_count++) {
         idx = `"${index_count}"`;
-        // console.log(results[index_count].name);
-        // console.log(results[index_count].rating);
-        // console.log(results["0"].types);
-        // console.log(results["0"].vicinity);
-        // console.log(results["0"].photos["0"].photo_reference);
-        // console.log(results["0"].opening_hours.open_now);
 
         const nomen = results[index_count].name;
         const rating = results[index_count].rating;
         // types are weird. they are multiple. will require sorting and removing "establishment"
         const address = results[index_count].vicinity;
-        const isOpen = results[index_count].opening_hours.open_now;
+        // const isOpen = results[index_count].opening_hours.open_now;
         const photo_ref = results[index_count].photos["0"].photo_reference;
         const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_ref}&key=AIzaSyBlM-WBRE6npH8Tb2rem-rTL8m1Ti0gT7c`;
 
@@ -60,12 +64,6 @@ function getLandmark(coordArray) {
         const card = document.createElement("div");
         card.classList.add("card");
         card.setAttribute("style", "width: 18rem;");
-        // card.setAttribute("style", "height: fit-content;");
-        // card.setAttribute("style", "width: 300px;");
-
-        // card.setAttrebute("style", "margin-left: 5px");
-        // card.setAttrebute("style", "margin-right: 5px");
-        // card.setAttribute("style", "margin: 0px 5px");
         document.getElementById("api_output_container").appendChild(card);
 
         // Image URL
@@ -103,4 +101,5 @@ function getLandmark(coordArray) {
         cardBody.appendChild(newAddress);
       }
     });
+  index_count = 0;
 }
