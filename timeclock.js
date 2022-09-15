@@ -1,18 +1,20 @@
 
 
 //Take user input and assign to lng and lat variables for time
-export function time(coord){
+// export function time(coord){
 
-    if(document.querySelector('.clock')){
-        while (document.querySelector('#api_output_container')){
-        document.querySelector('.clock').firstElementChild.remove();
+
+document.querySelector('.timeBtn').addEventListener('click', function() {
+    // if(document.querySelector('.clock')){
+        while (document.querySelector('.clock')){
+            document.querySelector('.clock').remove();
         }
-    }
+        // }
     
-let lng = coord.lng; 
-let lat = coord.lat;
+// let lng = coord.lng; 
+// let lat = coord.lat;
 //tz lookup to take in coordinates and output IANA standard time zones
-const input = tzlookup(lat,lng);
+const input = tzlookup(coord.lat, coord.lng);
 console.log(input);
 //create element to hold clock
 const momentContainer = document.createElement('div');
@@ -32,4 +34,6 @@ momentText.innerText = `${month}
 ${time}`;}, 1000);
 // document.querySelector('.clock').setAttribute('style', 'display:none');
 // document.querySelector('.clockText').setAttribute('style', 'display:none');
-}
+// }
+
+});
