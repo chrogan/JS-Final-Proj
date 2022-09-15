@@ -22,6 +22,8 @@ const weather = {
             
     },
 
+
+
     showWeather: function(data) {
         const { name } = data;
         const { temp } = data.main;
