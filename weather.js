@@ -1,11 +1,3 @@
-// while (document.querySelector('#api_output_container')){
-//     document.querySelector('#api_super_container').firstChild.remove();
-// }
-
-// while (document.querySelector('#apiBody')){
-//     document.querySelector('#apiBody').remove();
-// }
-
 
 const weather = {
     getWeather: function(lat, lon) {
@@ -21,8 +13,6 @@ const weather = {
         })
             
     },
-
-
 
     showWeather: function(data) {
         const { name } = data;
@@ -77,18 +67,13 @@ const weather = {
         imageContainer.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
         descriptionImageBox.appendChild(imageContainer);
 
-        // apiBody.setAttribute('style',`background: url(${imageContainer.src})`);
-
         // Create Description p
         const descriptionContainer = document.createElement('p');
         descriptionContainer.setAttribute('id', 'description');
         descriptionContainer.innerText = description.toUpperCase();
         descriptionImageBox.appendChild(descriptionContainer);
 
-
         document.getElementById('apiBody').style.backgroundImage =  `url(https://source.unsplash.com/1600x900/?${newDescription})`;
-
-
     },
 
     searchWeather: function() {
@@ -99,6 +84,7 @@ const weather = {
         while (document.querySelector('#apiBody')){
             document.querySelector('#apiBody').remove();
         }
+
         const coord = JSON.parse(localStorage.getItem('coordinates'));
         weather.getWeather(coord.lat, coord.lng);
      

@@ -11,7 +11,6 @@ document.querySelector('.timeBtn').addEventListener('click', function() {
 
 //tz lookup to take in coordinates and output IANA standard time zones
 const coord = JSON.parse(localStorage.getItem('coordinates'));
-
 const input = tzlookup(coord.lat, coord.lng);
 console.log(input);
 

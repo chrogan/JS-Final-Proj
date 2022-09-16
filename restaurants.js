@@ -36,9 +36,7 @@ function getRestaurant() {
 
         const nomen = results[index_cnt].name;
         const rating = results[index_cnt].rating;
-        // types are weird. they are multiple. will require sorting and removing "establishment"
         const address = results[index_cnt].vicinity;
-        // const isOpen = results[index_cnt].opening_hours.open_now;
         const photo_ref = results[index_cnt].photos["0"].photo_reference;
         const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_ref}&key=AIzaSyBlM-WBRE6npH8Tb2rem-rTL8m1Ti0gT7c`;
 

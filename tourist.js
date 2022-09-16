@@ -1,8 +1,6 @@
 let index_count = 0;
 let idx;
 
-// const type = "tourist_attraction";
-
 const type = "tourist_attraction";
 document.querySelector(".touristBtn").addEventListener("click", function () {
   while (document.querySelector("#api_output_container")) {
@@ -38,9 +36,7 @@ function getLandmark() {
 
         const nomen = results[index_count].name;
         const rating = results[index_count].rating;
-        // types are weird. they are multiple. will require sorting and removing "establishment"
         const address = results[index_count].vicinity;
-        // const isOpen = results[index_count].opening_hours.open_now;
         const photo_ref = results[index_count].photos["0"].photo_reference;
         const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photo_ref}&key=AIzaSyBlM-WBRE6npH8Tb2rem-rTL8m1Ti0gT7c`;
 
