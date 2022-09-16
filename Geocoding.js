@@ -10,20 +10,28 @@ function locationMap() {
 }
 
 function createMap(error, response) {
-  const location = response.results[0].locations[0]; //grabbing the location object and storing to location
-  const latLng = location.displayLatLng; //grabbing the longitude and latitude and storing to latLng
-  const coord = latLng;
-  localStorage.setItem('coordinates', JSON.stringify(coord));
+  try {
+    const location = response.results[0].locations[0]; //grabbing the location object and storing to location
+    const latLng = location.displayLatLng; //grabbing the longitude and latitude and storing to latLng
+    const coord = latLng;
 
-  if (map) {
-    map.flyTo(latLng, 14);
-  } else {
-    map = L.mapquest.map("map", {
-      //map initialized
-      center: coord,
-      layers: L.mapquest.tileLayer("map"),
-      zoom: 14,
-    });
+    localStorage.setItem("coordinates", JSON.stringify(coord));
+
+    if (map) {
+      map.flyTo(latLng, 14);
+      L.marker(latLng).addTo(map);
+    } else {
+      map = L.mapquest.map("map", {
+        //map initialized
+        center: coord,
+        layers: L.mapquest.tileLayer("map"),
+        zoom: 14,
+      });
+      map.addControl(L.mapquest.satelliteControl());
+      L.marker(latLng).addTo(map);
+    }
+  } catch (error) {
+    alert(error);
   }
 }
 document.getElementById("myBtn").addEventListener("click", locationMap);
