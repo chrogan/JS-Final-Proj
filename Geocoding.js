@@ -1,6 +1,5 @@
 const key = "DOEEESf7yldIWHelbTOJkQ3KzaxXWrA7";
 let map;
-let coord;
 
 function locationMap() {
   L.mapquest.key = key; //access key
@@ -15,13 +14,6 @@ function createMap(error, response) {
   const latLng = location.displayLatLng; //grabbing the longitude and latitude and storing to latLng
   const coord = latLng;
   localStorage.setItem('coordinates', JSON.stringify(coord));
-
-  // localStorage 
-  //  const coord = {name:'NELLY',gender:'male'};
-  // localStorage.setItem('myPerson',JSON.stringify(obj));
-  // JSON.parse('NAMEOFKEY');
-
-  
 
   if (map) {
     map.flyTo(latLng, 14);
